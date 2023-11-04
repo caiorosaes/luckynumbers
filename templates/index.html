@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>LuckyNumbers - Geração de Combinações</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>LuckyNumbers</h1>
+            <h2>Geração de Combinações da Mega-Sena</h2>
+        </header>
+        <main>
+            <section id="latest-results">
+                <h3>Resultados Mais Recentes da Mega-Sena</h3>
+                <ul>
+                    <li><strong>Concurso:</strong> {{ concurso }}</li>
+                    <li><strong>Data do Sorteio:</strong> {{ data_sorteio }}</li>
+                    <li><strong>Dezenas Sorteadas:</strong> {{ dezenas_sorteio | join(' - ') }}</li>
+                    <li><strong>Premiações:</strong>
+                        <ul>
+                            {% for premiacao in premiacoes %}
+                            <li>{{ premiacao.descricao }}: {{ premiacao.ganhadores }} ganhador(es) - Prêmio: R$ {{ premiacao.valorPremio }}</li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section id="generate-buttons">
+                <button id="random-button">Gerar Aleatório</button>
+                <button id="intelligent-button">Gerar Inteligente</button>
+            </section>
+            <section id="generated-combinations">
+                <h3>Combinações Geradas</h3>
+                <ul id="combinations-list">
+                    <!-- Combinações geradas serão exibidas aqui -->
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script>
+        // Função para gerar números aleatórios
+        function generateRandomCombination() {
+            let numbers = [];
+            while (numbers.length < 6) {
+                let randomNumber = Math.floor(Math.random() * 60) + 1;
+                if (!numbers.includes(randomNumber)) {
+                    numbers.push(randomNumber);
+                }
+            }
+            return numbers;
+        }
+
+        // Função para exibir a combinação gerada no navegador
+        function displayCombination(combination) {
+            const combinationsList = document.getElementById('combinations-list');
+            const listItem = document.createElement('li');
+            listItem.textContent = 'Combinação: ' + combination.join(' - ');
+            combinationsList.appendChild(listItem);
+        }
+
+        // Adicione um ouvinte de eventos ao botão "Gerar Aleatório"
+        const randomButton = document.getElementById('random-button');
+        randomButton.addEventListener('click', function () {
+            const randomCombination = generateRandomCombination();
+            displayCombination(randomCombination);
+        });
+    </script>
+</body>
+</html>
