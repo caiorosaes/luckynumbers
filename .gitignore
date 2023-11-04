@@ -1,0 +1,7 @@
+# Arquivos de configuração do ambiente virtual (gerados pelo venv ou virtualenv)
+venv/
+
+# Arquivos de configuração do IDE (por exemplo, arquivos .vscode/)
+.vscode/
+
+# Qualquer outro diretório ou arquivo específico que você deseja ignorar
