@@ -40,33 +40,6 @@
             </section>
         </main>
     </div>
-    <script>
-        // Função para gerar números aleatórios
-        function generateRandomCombination() {
-            let numbers = [];
-            while (numbers.length < 6) {
-                let randomNumber = Math.floor(Math.random() * 60) + 1;
-                if (!numbers.includes(randomNumber)) {
-                    numbers.push(randomNumber);
-                }
-            }
-            return numbers;
-        }
-
-        // Função para exibir a combinação gerada no navegador
-        function displayCombination(combination) {
-            const combinationsList = document.getElementById('combinations-list');
-            const listItem = document.createElement('li');
-            listItem.textContent = 'Combinação: ' + combination.join(' - ');
-            combinationsList.appendChild(listItem);
-        }
-
-        // Adicione um ouvinte de eventos ao botão "Gerar Aleatório"
-        const randomButton = document.getElementById('random-button');
-        randomButton.addEventListener('click', function () {
-            const randomCombination = generateRandomCombination();
-            displayCombination(randomCombination);
-        });
-    </script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

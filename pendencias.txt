@@ -1,0 +1,18 @@
+Estou querendo desenvolver um aplicação web, sem a necessidade de login, o usuário entra na pagina escolhe se deseja uma combinação aleatória de 6 numeros, entre 1 e 60, ou se ele deseja pegar uma combinação dos numeros que mais venceram ao longo dos anos de uma planilha dos resultados da mega sena. 
+
+É mostrado a combinação da tela de usuário. Somente isso. Como poderia fazer essa aplicação utilizando python? estruture a arquitetura da aplicação e oque utilizar para oque.
+
+Lembre-se, poderá vir de uma api ou csv a primeira combinação, ou combinação aleatória.
+Deverá ter interface que mostra o resultado a ultima mega sena. Os botoes para gerar uma combinação e a tela embaixo para exibir a sequencia escolhida.
+
+Desejo fazer uma aplicação web que se chama luckynumbers. O intuito dela é gerar combinações de 6 números entre 1 e 60 para jogar na mega sena. Terá dois tipos de saída.
+
+- Através da análise do csv com resultados da mega sena, extrair os resultados que mais apareceram ao longo dos anos, e montar uma sequência com 6 números, várias diferentes, não só apenas uma.
+
+- E através de um algoritmo que gera combinações aleatórias mesmo. Entre 1 e 60, com 6 números.
+
+- Na interface do usuário, vai ter em cima, os ultimos 3 resultados da mega sena. Abaixo 2 botões, gerar aleatório, ou inteligente para o com análise do csv. E abaixo uma caixa para colocar as combinações geradas.
+
+- os ultimos 3 resultados serao buscados para serem exibidos atraves de uma api das loterias caixa.
+
+Estruture a aplicação com python, seus frameworks e bibliotecas.
